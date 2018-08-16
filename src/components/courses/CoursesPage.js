@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import {
   createCourse
@@ -66,9 +67,7 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    createCourse: (course) => dispatch(
-      createCourse(course)
-    )
+    createCourse: bindActionCreators(createCourse, dispatch)
   };
 }
 
